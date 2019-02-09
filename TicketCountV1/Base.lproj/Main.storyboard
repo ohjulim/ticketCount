@@ -18,38 +18,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="얼마 나왔어요?" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RPn-7n-Ysj">
-                                <rect key="frame" x="16" y="95" width="288" height="52"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pRY-5I-41P">
+                                <rect key="frame" x="20" y="75" width="280" height="61"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="얼마 나왔어요?" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RPn-7n-Ysj">
+                                <rect key="frame" x="25" y="81" width="270" height="49"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Vh7-6H-6Z7"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOS-Lb-cON">
-                                <rect key="frame" x="97" y="201" width="127" height="30"/>
-                                <state key="normal" title="식권으로 계산하기"/>
-                                <connections>
-                                    <action selector="showAlert" destination="BYZ-38-t0r" eventType="touchUpInside" id="aYQ-WU-n3r"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="결제 금액" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0d-ib-X5t">
+                                <rect key="frame" x="25" y="50" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤑 거스름돈" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOm-pE-YT2">
+                                <rect key="frame" x="25" y="207" width="116" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.56060259484599184" blue="0.06246563515398218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🎟 식권" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3x8-jV-U2L">
+                                <rect key="frame" x="25" y="170" width="74" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.37110156346789724" blue="0.46418544105350867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RPn-7n-Ysj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="4Yq-42-yig"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RPn-7n-Ysj" secondAttribute="trailing" constant="16" id="8UH-tL-bnK"/>
-                            <constraint firstItem="cOS-Lb-cON" firstAttribute="top" secondItem="RPn-7n-Ysj" secondAttribute="bottom" constant="54" id="BHd-Wh-PoT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cOS-Lb-cON" secondAttribute="trailing" constant="96" id="TFr-UN-mGx"/>
-                            <constraint firstItem="cOS-Lb-cON" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="97" id="dwT-aC-yC3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cOS-Lb-cON" secondAttribute="bottom" constant="337" id="mOg-4g-ZlP"/>
-                            <constraint firstItem="RPn-7n-Ysj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qwF-Vu-Wp2"/>
+                            <constraint firstItem="RPn-7n-Ysj" firstAttribute="leading" secondItem="I0d-ib-X5t" secondAttribute="leading" id="6SC-hb-bZ1"/>
+                            <constraint firstItem="I0d-ib-X5t" firstAttribute="leading" secondItem="3x8-jV-U2L" secondAttribute="leading" id="7BT-q1-xPk"/>
+                            <constraint firstItem="pRY-5I-41P" firstAttribute="centerY" secondItem="RPn-7n-Ysj" secondAttribute="centerY" id="AGM-rW-5M7"/>
+                            <constraint firstItem="pRY-5I-41P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jy4-wX-wfJ"/>
+                            <constraint firstItem="pRY-5I-41P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Qss-sD-DQf"/>
+                            <constraint firstItem="RPn-7n-Ysj" firstAttribute="top" secondItem="I0d-ib-X5t" secondAttribute="bottom" constant="10" id="TAs-RL-iH7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I0d-ib-X5t" secondAttribute="trailing" symbolic="YES" id="XEH-L5-1Ip"/>
+                            <constraint firstItem="3x8-jV-U2L" firstAttribute="top" secondItem="RPn-7n-Ysj" secondAttribute="bottom" constant="40" id="XgZ-TL-H58"/>
+                            <constraint firstItem="3x8-jV-U2L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="ZtR-WR-svH"/>
+                            <constraint firstItem="jOm-pE-YT2" firstAttribute="top" secondItem="3x8-jV-U2L" secondAttribute="bottom" constant="8" id="ivn-9m-JDR"/>
+                            <constraint firstItem="RPn-7n-Ysj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="61" id="jQC-jj-lw1"/>
+                            <constraint firstItem="pRY-5I-41P" firstAttribute="centerX" secondItem="RPn-7n-Ysj" secondAttribute="centerX" id="jVJ-Ng-Pxq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3x8-jV-U2L" secondAttribute="trailing" symbolic="YES" id="o2R-em-Uc7"/>
+                            <constraint firstAttribute="bottom" secondItem="pRY-5I-41P" secondAttribute="bottom" constant="432" id="rOn-Pf-ixx"/>
+                            <constraint firstItem="3x8-jV-U2L" firstAttribute="leading" secondItem="jOm-pE-YT2" secondAttribute="leading" id="uyN-cQ-aAz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jOm-pE-YT2" secondAttribute="trailing" symbolic="YES" id="v4q-Qq-Ntx"/>
+                            <constraint firstItem="pRY-5I-41P" firstAttribute="top" secondItem="I0d-ib-X5t" secondAttribute="bottom" constant="4" id="yzR-Wn-wqG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="changeLabel" destination="jOm-pE-YT2" id="6sK-d3-AHV"/>
                         <outlet property="inputField" destination="RPn-7n-Ysj" id="Jah-zP-IHG"/>
-                        <outlet property="showAlertButton" destination="cOS-Lb-cON" id="r2m-em-Uo2"/>
+                        <outlet property="ticketCountLabel" destination="3x8-jV-U2L" id="Gy7-yU-eek"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
