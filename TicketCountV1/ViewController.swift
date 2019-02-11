@@ -13,51 +13,58 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
-	
-	let ticketPrice = 4500 //식권 가격
-	@IBOutlet weak var inputField: UITextField! //사용자 입력 값
-	@IBOutlet weak var ticketCountLabel: UILabel!
-	@IBOutlet weak var changeLabel: UILabel!
-	
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		inputField.becomeFirstResponder()
-		initializeLabels()
-	}
-	
-	func initializeLabels() {
-		ticketCountLabel.text = "🎟 식권"
-		changeLabel.text = "🤑 거스름돈"
-	}
-	
+class ViewController: UIViewController {
+    
+    let priceOfSingleTicket = 4500 // 식권 가격
+    
+    @IBOutlet weak var inputField: UITextField! //사용자 입력 값
+    @IBOutlet weak var ticketCountLabel: UILabel!
+    @IBOutlet weak var changeLabel: UILabel!
+    
+    // 총 결제 금액
+    var totalAmount: Int = 0 {
+        didSet {
+            calculate(with: totalAmount)
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        initializeLabels()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        inputField.becomeFirstResponder()
+    }
+    
+    // 초기화
+    func initializeLabels() {
+        ticketCountLabel.text = "🎟 식권"
+        changeLabel.text = "🤑 거스름돈"
+    }
+    
+    // 식권 갯수와 잔돈을 계산해주는 로직
+    func calculate(with value: Int) {
+        let numberOfTickets: Int = (value - 1) / priceOfSingleTicket + 1
+        let change = (priceOfSingleTicket * numberOfTickets) - value
+        
+        ticketCountLabel.text = change == 0 ? "🎟 \(numberOfTickets)장 내세요" : "🎟 \(numberOfTickets)장 내고"
+        changeLabel.text = change == 0 ? "👌 거스름돈 없어요" : "🤑 \(change)원 받으세요"
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-		
 		let oldText = textField.text!
 		let stringRange = Range(range, in:oldText)!
-		let newText = oldText.replacingCharacters(in: stringRange,
-																							with: string)
-		let ticketCount:Int
-		if let orderValue = Int(newText) {
-			if orderValue % ticketPrice == 0 { // 나눗셈이 딱 떨어지면(주문가격이 식권가격의 배수일 경우)
-				ticketCount = orderValue / ticketPrice // 나눗셈의 몫이 곧 필요한 식권 수 이고,
-			} else { // 나눗셈이 딱 떨어지지않으면 나눗셈의 몫에 1을 더한 값이 필요한 최소 식권 수.
-				ticketCount = orderValue / ticketPrice + 1
-			}
-			let change = (ticketPrice * ticketCount) - orderValue
-			
-			if orderValue == ticketPrice {
-				ticketCountLabel.text = "🎟 \(ticketCount)장 내세요"
-				changeLabel.text = "👌 거스름돈 없어요"
-			} else if orderValue % ticketPrice == 0 {
-				ticketCountLabel.text = "🎟 \(ticketCount)장 내세요"
-				changeLabel.text = "👌 거스름돈 없어요"
-			} else {
-				ticketCountLabel.text = "🎟 \(ticketCount)장 내고"
-				changeLabel.text = "🤑 \(change)원 받으세요"
-			}
-		} else {
+		let newText = oldText.replacingCharacters(in: stringRange, with: string)
+        
+        if let newValue = Int(newText) {
+            totalAmount = newValue
+        } else {
 			initializeLabels()
 		}
 		return true
@@ -67,6 +74,5 @@ class ViewController: UIViewController, UITextFieldDelegate {
 		initializeLabels()
 		return true
 	}
-
 }
 
