@@ -49,6 +49,30 @@
                                 <color key="textColor" red="1" green="0.37110156346789724" blue="0.46418544105350867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qds-HI-s6r">
+                                <rect key="frame" x="278" y="45" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="HlX-Yy-rBc" kind="presentation" modalTransitionStyle="coverVertical" id="gic-Oc-m8J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtv-82-0Ak">
+                                <rect key="frame" x="231" y="168" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="식권 더하기"/>
+                                <connections>
+                                    <action selector="plusOneTicket:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OfM-JT-rbi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dut-sI-56f">
+                                <rect key="frame" x="153" y="168" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="식권 빼기"/>
+                                <connections>
+                                    <action selector="minusOneTicket:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VzV-xJ-Phd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -80,6 +104,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.875" y="133.09859154929578"/>
+        </scene>
+        <!--Setup Price Of Ticket View Controller-->
+        <scene sceneID="kCe-oz-PFy">
+            <objects>
+                <viewController id="HlX-Yy-rBc" customClass="setupPriceOfTicketViewController" customModule="TicketCountV1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7SB-oy-Dic">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAa-rU-6x6">
+                                <rect key="frame" x="265" y="37" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="close" destination="HlX-Yy-rBc" eventType="touchUpInside" id="xOM-2n-fwb"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="default: 4500원" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqO-hv-BIq">
+                                <rect key="frame" x="21" y="92" width="283" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="HlX-Yy-rBc" id="fUu-wu-HT4"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Zvi-dp-cDN"/>
+                    </view>
+                    <connections>
+                        <outlet property="inputField" destination="zqO-hv-BIq" id="AoW-BI-ZTx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BZE-4m-Avy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890.625" y="132.04225352112675"/>
         </scene>
     </scenes>
 </document>

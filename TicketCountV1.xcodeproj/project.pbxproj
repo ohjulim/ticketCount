@@ -12,6 +12,7 @@
 		C05B0ABE220ADC2E00D65EEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05B0ABC220ADC2E00D65EEE /* Main.storyboard */; };
 		C05B0AC0220ADC3100D65EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C05B0ABF220ADC3100D65EEE /* Assets.xcassets */; };
 		C05B0AC3220ADC3100D65EEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05B0AC1220ADC3100D65EEE /* LaunchScreen.storyboard */; };
+		C0E30078222D6AB500F0413B /* setupPriceOfTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E30077222D6AB500F0413B /* setupPriceOfTicketViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C05B0ABF220ADC3100D65EEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C05B0AC2220ADC3100D65EEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C05B0AC4220ADC3100D65EEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0E30077222D6AB500F0413B /* setupPriceOfTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setupPriceOfTicketViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				C05B0AB8220ADC2E00D65EEE /* AppDelegate.swift */,
 				C05B0ABA220ADC2E00D65EEE /* ViewController.swift */,
 				C05B0ABC220ADC2E00D65EEE /* Main.storyboard */,
+				C0E30077222D6AB500F0413B /* setupPriceOfTicketViewController.swift */,
 				C05B0ABF220ADC3100D65EEE /* Assets.xcassets */,
 				C05B0AC1220ADC3100D65EEE /* LaunchScreen.storyboard */,
 				C05B0AC4220ADC3100D65EEE /* Info.plist */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E30078222D6AB500F0413B /* setupPriceOfTicketViewController.swift in Sources */,
 				C05B0ABB220ADC2E00D65EEE /* ViewController.swift in Sources */,
 				C05B0AB9220ADC2E00D65EEE /* AppDelegate.swift in Sources */,
 			);
